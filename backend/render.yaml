@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: medusa-backend
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_LYwKdOgHmB85@ep-hidden-night-aez4pjgw-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+      - key: JWT_SECRET
+        value: supersecret
+      - key: COOKIE_SECRET
+        value: supersecret
+      - key: MEDUSA_ADMIN_ONBOARDING_TYPE
+        value: nextjs
+      - key: STORE_CORS
+        value: "*"
+      - key: ADMIN_CORS
+        value: "*"
+      - key: AUTH_CORS
+        value: "*"

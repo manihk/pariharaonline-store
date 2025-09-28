@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: medusa-storefront
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY
+        value: pk_d1b06085a02d8b339c2e4f398b7164a7f101af5f2493943d018494c996f4d9c7
+      - key: NEXT_PUBLIC_DEFAULT_REGION
+        value: us
+      - key: REVALIDATE_SECRET
+        value: supersecret

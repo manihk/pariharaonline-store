@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": ".next",
+  "installCommand": "npm ci",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY": "pk_d1b06085a02d8b339c2e4f398b7164a7f101af5f2493943d018494c996f4d9c7",
+    "NEXT_PUBLIC_DEFAULT_REGION": "us",
+    "REVALIDATE_SECRET": "supersecret",
+    "NODE_ENV": "production"
+  }
+}
